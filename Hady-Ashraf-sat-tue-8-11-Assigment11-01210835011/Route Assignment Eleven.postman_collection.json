@@ -1,0 +1,512 @@
+{
+  "info": {
+    "_postman_id": "9d997bb8-ec26-4689-ba8a-44c42fcf9a18",
+    "name": "Route Assignment Eleven",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50605645",
+    "_collection_link": "https://go.postman.co/collection/50605645-9d997bb8-ec26-4689-ba8a-44c42fcf9a18?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Hady Ashraf",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "hedoalan21@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678910Aa!",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "+201210835011",
+                  "type": "text"
+                },
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "type": "text"
+                },
+                {
+                  "key": "age",
+                  "value": "21",
+                  "type": "text"
+                },
+                {
+                  "key": "role",
+                  "value": "client",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/hp/Desktop/Hady/demo-picture.jpg"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verifyEmail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"hedoalan20@gmail.com\",\r\n    \"otp\": \"864444\" \r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/verifyEmail",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "verifyEmail"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"hedoalan20@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/resend-otp",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "resend-otp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"hedoalan20@gmail.com\",\r\n    \"password\": \"12345678910Aa!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refreshToken",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NjAwZTdjZTA4YjI5NDExYTU4NTgiLCJyb2xlIjoiYWRtaW4iLCJzZXNzaW9uSWQiOiI4NDZiZmQ0ZC1kNzA4LTRlMDMtOWU0Ni0yZjg5NWMyOWU3MDYiLCJpYXQiOjE3ODkyMjI5MzksImV4cCI6MTc4OTgyNzczOX0.xZj6EjG4WXLISE7d2cnZjGeAIFwK1ZgmlkB0-BPynlQ\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/refresh",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NmJjYmQyYzkxMzU4MDRhYjUzMDUiLCJzZXNzaW9uSWQiOiJkMTc0NzQxYS1lYmE2LTQ2N2ItODY0YS00ZjZkZDMxZmE0OGYiLCJpYXQiOjE3ODkyMjY3MTQsImV4cCI6MTc4OTIzMDMxNH0.wfXCYjDlPHucsq9Wjbg2FyOtAq1dMTvRjmgyJ1tyEHQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Hady Ashraf",
+                  "type": "text",
+                  "uuid": "e01a092d-3e6b-4f00-8712-742ce733a0b7"
+                },
+                {
+                  "key": "email",
+                  "value": "hadyashraf80@gmail.com",
+                  "type": "text",
+                  "uuid": "da2cc929-952c-4ade-be36-edc11c3fccb2"
+                },
+                {
+                  "key": "password",
+                  "value": "1597536450Hedo!",
+                  "type": "text",
+                  "uuid": "c3c94a6e-148a-4a24-982a-3799289fabfb"
+                },
+                {
+                  "key": "phone",
+                  "value": "+201210835011",
+                  "type": "text",
+                  "uuid": "0d8355f2-f670-41fe-8bb2-1ff20226c36d"
+                },
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "type": "text",
+                  "uuid": "0eac5020-b028-4124-a417-0eb0596cadef"
+                },
+                {
+                  "key": "age",
+                  "value": "21",
+                  "type": "text",
+                  "uuid": "282158af-6eb3-4943-9d07-c910c0ba3506"
+                },
+                {
+                  "key": "role",
+                  "value": "admin",
+                  "type": "text",
+                  "uuid": "35a7284d-eaf3-40d7-bac0-fe0eb569c3dc"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e9b3ef2a-9512-47d2-a74d-bc8c65533244",
+                  "src": "/C:/Users/hp/Desktop/Hady/demo-picture.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/logout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "updateUser",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NmQ1MGQyYzkxMzU4MDRhYjUzMGIiLCJzZXNzaW9uSWQiOiI1MzQ1MjYxMC1lYzA4LTQ1YmEtOThkOS0yZWRlNWZjYTVmYjUiLCJpYXQiOjE3ODkyMjY0MTMsImV4cCI6MTc4OTIzMDAxM30.GJunpiE_HeU302iUkGAKkzxg4Iv_UcJaJklnGB9gkxM",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"newEmail\": \"hadyashraf10@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteUser",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NmJjYmQyYzkxMzU4MDRhYjUzMDUiLCJzZXNzaW9uSWQiOiI4Yjc0YjlkYS1hYzIwLTRhZTgtYjMzYy05YjM0NTg2Yjc1ZGQiLCJpYXQiOjE3ODkyMjU5NzEsImV4cCI6MTc4OTIyOTU3MX0.RSs11h3-iUx_7PGWGkzw47Cwx_98ZPzoC9U-uFhJRLU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/delete/6aa56c15d2c9135804ab5307",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "delete",
+                "6aa56c15d2c9135804ab5307"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Note",
+      "item": [
+        {
+          "name": "addNote",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NzAwNWFjYTQ5ZWY4NTU1YjRkYWMiLCJzZXNzaW9uSWQiOiJiMjYzODQ4ZS01NGM0LTQ1ZmYtYjE0ZC03NmY1ZWNiOGMwYTYiLCJpYXQiOjE3ODkyMjcwNDYsImV4cCI6MTc4OTIzMDY0Nn0.b9odCw0Tx3ngvTcUagMCw__lJldXdkJ_nolyByddBiU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"tittle\": \"Video Editing\",\r\n    \"content\": \"I want to be a professional video editor.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/note/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "note",
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getNote",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NzAwNWFjYTQ5ZWY4NTU1YjRkYWMiLCJzZXNzaW9uSWQiOiJiMjYzODQ4ZS01NGM0LTQ1ZmYtYjE0ZC03NmY1ZWNiOGMwYTYiLCJpYXQiOjE3ODkyMjcwNDYsImV4cCI6MTc4OTIzMDY0Nn0.b9odCw0Tx3ngvTcUagMCw__lJldXdkJ_nolyByddBiU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/note/get",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "note",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "editNote",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NzAwNWFjYTQ5ZWY4NTU1YjRkYWMiLCJzZXNzaW9uSWQiOiJiMjYzODQ4ZS01NGM0LTQ1ZmYtYjE0ZC03NmY1ZWNiOGMwYTYiLCJpYXQiOjE3ODkyMjcwNDYsImV4cCI6MTc4OTIzMDY0Nn0.b9odCw0Tx3ngvTcUagMCw__lJldXdkJ_nolyByddBiU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"newTittle\": \"Hi there\",\r\n    \"newContent\": \"Hello Hady Ashraf Hamdan.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/note/update/6aa57038aca49ef8555b4dae",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "note",
+                "update",
+                "6aa57038aca49ef8555b4dae"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteNote",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWE1NzAwNWFjYTQ5ZWY4NTU1YjRkYWMiLCJzZXNzaW9uSWQiOiJiMjYzODQ4ZS01NGM0LTQ1ZmYtYjE0ZC03NmY1ZWNiOGMwYTYiLCJpYXQiOjE3ODkyMjcwNDYsImV4cCI6MTc4OTIzMDY0Nn0.b9odCw0Tx3ngvTcUagMCw__lJldXdkJ_nolyByddBiU",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"hadyashraf81@gmail.com\",\r\n    \"password\": \"1597536450Hedo!\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/note/delete/6aa57038aca49ef8555b4dae",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "note",
+                "delete",
+                "6aa57038aca49ef8555b4dae"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
