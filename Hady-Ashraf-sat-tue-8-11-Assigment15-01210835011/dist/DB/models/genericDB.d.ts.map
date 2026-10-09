@@ -1,0 +1,1 @@
+{"version":3,"file":"genericDB.d.ts","sourceRoot":"","sources":["../../../src/DB/models/genericDB.ts"],"names":[],"mappings":"AAAA,qBAAa,OAAO,CAAC,CAAC;IACpB,OAAO,CAAC,KAAK,CAAW;IAExB,OAAO,CAAC,IAAI,EAAE,CAAC,GAAG,IAAI,CAErB;IAED,UAAU,CAAC,IAAI,EAAE,CAAC,GAAG,IAAI,CAExB;IAED,QAAQ,IAAI,CAAC,EAAE,CAEd;CACF"}
